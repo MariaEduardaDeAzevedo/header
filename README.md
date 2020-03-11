@@ -25,14 +25,14 @@ python header.py init
 
 ## Comandos
 - Importar qualquer arquivo:
-'''
+```
 python header.py w < caminho_do_cabeçalho > < caminho_do_arquivo >
-'''
+```
 - Salvar um arquivo de cabeçalho na sua biblioteca de cabeçalhos:
-'''
+```
 python header.py s < caminho_do_cabeçalho >
-'''
+```
 - Importar um cabeçalho de sua biblioteca em um arquivo:
-'''
+```
 python header.py ws nome_do_cabecalho_.txt < caminho_do_arquivo >
-'''
+```
