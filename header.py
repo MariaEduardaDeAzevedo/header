@@ -4,8 +4,8 @@ import sys
 import os.path
 
 def write(arg):
-    header = open(arg[1], "r")
-    file_ = open(arg[2], "a")
+    header = open(os.path.expanduser("~/") + arg[1], "r")
+    file_ = open(os.path.expanduser("~/") + arg[2], "a")
 
     for line in header.read():
         file_.writelines(line)
@@ -16,7 +16,7 @@ def write(arg):
 
 def write_save(arg, directory):
     header = open(directory + "/headers/" + arg[1], "r")
-    file_ = open(arg[2], "a")
+    file_ = open(os.path.expanduser("~/") + arg[2], "a")
 
     for line in header.read():
         file_.writelines(line)
