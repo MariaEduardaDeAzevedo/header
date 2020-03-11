@@ -16,7 +16,7 @@ def write(arg):
 
 def write_save(arg, directory):
     header = open(directory + "/headers/" + arg[1], "r")
-    file_ = open(directory + "/headers/" + arg[2], "a")
+    file_ = open(arg[2], "a")
 
     for line in header.read():
         file_.writelines(line)
