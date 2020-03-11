@@ -30,14 +30,18 @@ def save(arg):
     os.link(arg[1], directory + "/headers/" + file_name)
     return (file_name + " salvo em sua biblioteca de cabeçalhos")
 
+def create(arg, directory):
+    open(directory + "/headers/" + arg[1], "w")
+    os.system("/usr/bin/vim " + directory + "/headers/" + arg[1])
+
 def init():
     config_read = open(".config.txt", "r")
-
     if config_read.readlines()[0] == "!init":
         config_write = open(".config.txt", "w")
         config_write.write("init")
         config_write.close()
         os.mkdir("headers")
+        config_read.close()
         return("Header iniciado e pronto para utilizar!")
 
     config_read.close()
@@ -63,6 +67,8 @@ elif status and arg[0].lower() == "ws":
     print(write_save(arg, directory))
 elif status and arg[0].lower() == "s":
     print(save(arg))
+elif status and arg[0].lower() == "c":
+    print(create(arg, directory))
 elif not status and arg[0].lower() == "init":
     print(init())
 

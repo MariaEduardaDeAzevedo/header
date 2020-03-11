@@ -32,6 +32,10 @@ python header.py w < caminho_do_cabeçalho > < caminho_do_arquivo >
 ```
 python header.py s < caminho_do_cabeçalho >
 ```
+- Criar um arquivo de cabeçalho direto na sua biblioteca de cabeçalhos:
+```
+python header.py c nome_do_arquivo.txt
+```
 - Importar um cabeçalho de sua biblioteca em um arquivo:
 ```
 python header.py ws nome_do_cabecalho_.txt < caminho_do_arquivo >
