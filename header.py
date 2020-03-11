@@ -37,7 +37,7 @@ def init():
         config_write = open(".config.txt", "w")
         config_write.write("init")
         config_write.close()
-        os.mkdir("header")
+        os.mkdir("headers")
         return("Header iniciado e pronto para utilizar!")
 
     config_read.close()
