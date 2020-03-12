@@ -15,6 +15,12 @@ def write(arg):
     return ("Conteúdo de " + arg[1] + " importado em " + arg[2])
 
 def write_save(arg, directory):
+
+    if arg[2].split("/")[-1] not in os.listdir(os.path.expanduser("~/") + arg[2].split("/").pop(-1).join("/")):
+        choice = input(arg[2].split("/")[-1] + " não existe no diretório informado, deseja criar? [S/N] ")
+        if choice.lower() == "n":
+            return "Tente novamente passando um caminho correto."
+
     header = open(directory + "/headers/" + arg[1], "r")
     file_ = open(os.path.expanduser("~/") + arg[2], "a")
 
