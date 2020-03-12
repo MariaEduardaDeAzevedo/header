@@ -7,20 +7,20 @@
 ### Iniciando no Header.
 - Para utilizar esta ferramenta, clone este repositório!
 - Após isso, vá até o diretório clonado no seu computador e execute o arquivo header.py:
-'''
+```
 python header.py 
-'''
+```
 - Se você acabou de iniciar verá a seguinte mensagem:
-'''
+```
 Olá! Bem-vindo ao Header!
 Status do Header: não iniciado
 Comando para importar um cabeçalho em um arquivo:
 python header.py w < caminho_do_cabeçalho > < caminho_do_arquivo >
-'''
+```
 - Então execute o comando: 
-'''
+```
 python header.py init
-'''
+```
 - Pronto! O Header está pronto para ser utilizado!
 
 ## Comandos
