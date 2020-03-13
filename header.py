@@ -2,8 +2,17 @@
 #coding: utf-8
 import sys
 import os.path
+import shutil
 
 def write(arg):
+    if arg[1].split("/")[-1] not in os.listdir(os.path.expanduser("~/") + arg[2].split("/").pop(-1).join("/")):
+        return(arg[1].split("/")[-1] + " não existe no diretório informado. Tente novamente passando um diretório comum, ou crie um arquivo de cabeçalho dentro do seu workspace.")
+
+    if arg[2].split("/")[-1] not in os.listdir(os.path.expanduser("~/") + arg[2].split("/").pop(-1).join("/")):
+        choice = input(arg[2].split("/")[-1] + " não existe no diretório informado, deseja criar? [S/N] ")
+        if choice.lower() == "n":
+            return "Tente novamente passando um caminho correto."
+
     header = open(os.path.expanduser("~/") + arg[1], "r")
     file_ = open(os.path.expanduser("~/") + arg[2], "a")
 
@@ -31,10 +40,11 @@ def write_save(arg, directory):
     file_.close()
     return ("Conteúdo de " + arg[1] + " importado em " + arg[2])
 
-def save(arg):
-    file_name = arg[1].split("/")[-1]
-    os.link(arg[1], directory + "/headers/" + file_name)
-    return (file_name + " salvo em sua biblioteca de cabeçalhos")
+def save(arg, directory):
+    file_ = os.path.expanduser("~/") + "/" + arg[1]
+    open(directory + "/headers/" + file_.split("/")[-1], "w")
+    shutil.copyfile(os.path.expanduser("~/") + arg[1], directory + "/headers/" + file_.split("/")[-1])
+    return (file_.split("/")[-1] + " salvo em sua biblioteca de cabeçalhos")
 
 def create(arg, directory):
     open(directory + "/headers/" + arg[1], "w")
@@ -72,7 +82,7 @@ if status and arg[0].lower() == "w":
 elif status and arg[0].lower() == "ws":
     print(write_save(arg, directory))
 elif status and arg[0].lower() == "s":
-    print(save(arg))
+    print(save(arg, directory))
 elif status and arg[0].lower() == "c":
     print(create(arg, directory))
 elif not status and arg[0].lower() == "init":
