@@ -14,8 +14,8 @@ python3 header.py
 ```
 Olá! Bem-vindo ao Header!
 Status do Header: não iniciado
-Comando para importar um cabeçalho em um arquivo:
-python header.py w < caminho_do_cabeçalho > < caminho_do_arquivo >
+Para obter ajuda no uso da ferramenta, digite:
+python3 header.py help
 ```
 - Então execute o comando: 
 ```
