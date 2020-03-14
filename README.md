@@ -1,8 +1,8 @@
 # Header
 
-## O Header é uma aplicação desenvolvida em Python para ser utilizada na linha de comando. Sua finalidade é importar um cabeçalho, previamente salvo em um arquivo .txt, em um arquivo de destino.
+## O Header é uma aplicação desenvolvida em Python para ser utilizada na linha de comando. Sua finalidade é importar um cabeçalho, previamente salvo em um arquivo, em um outro arquivo de destino.
 
-## Esta aplicação foi pensada para facilitar a escrita de cabeçalhos padronizados em programas ou até em outros arquivos.
+## Esta aplicação foi pensada para facilitar a escrita de cabeçalhos padronizados em programas ou até em outros arquivos. Nos comando abaixo, os arquivos estão dados como .txt, mas podem ser outras extensões desejadas.
 
 ### Iniciando no Header.
 - Para utilizar esta ferramenta, clone este repositório!
@@ -39,4 +39,12 @@ python header.py c nome_do_arquivo.txt
 - Importar um cabeçalho de sua biblioteca em um arquivo:
 ```
 python header.py ws nome_do_cabecalho_.txt < caminho_do_arquivo >
+```
+- Listar os arquivos salvos em sua biblioteca:
+```
+python header.py list
+```
+- Editar um arquivo salvo em sua biblioteca:
+```
+python header.py e nome_do_arquivo.txt
 ```
