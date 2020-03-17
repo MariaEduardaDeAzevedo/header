@@ -99,7 +99,7 @@ def edit(arg, directory):
     if arg[1] not in os.listdir(directory + "/headers"):
         return arg[1] + " não existe na sua biblioteca de cabeçalhos."
     
-    open(directory + "/headers/" + arg[1], "w")
+    open(directory + "/headers/" + arg[1])
     os.system("/usr/bin/vim " + directory + "/headers/" + arg[1])
     
     return arg[1] + " editado e salvo na sua biblioteca de cabeçalhos."
