@@ -80,7 +80,7 @@ __email__ = "maria.silva@ccc.ufcg.edu.br"
 
 arg = sys.argv
 directory = os.path.dirname(os.path.realpath(__file__))
-config = open(".config.txt", "r")
+config = open(f"{directory}/.config.txt", "r")
 status = True if config.readlines()[0] == "init" else False
 
 if len(arg) == 1:
@@ -100,7 +100,7 @@ elif status and arg[0].lower() == "s":
 elif status and arg[0].lower() == "c":
     print(functions.create(arg, directory))
 elif not status and arg[0].lower() == "init":
-    print(functions.init())
+    print(functions.init(directory))
 elif status and arg[0].lower() == "list":
     functions.list_ws(directory)
 elif status and arg[0].lower() == "e":

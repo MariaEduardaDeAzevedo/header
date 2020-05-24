@@ -104,13 +104,13 @@ def edit(arg, directory):
     
     return arg[1] + " editado e salvo na sua biblioteca de cabeçalhos."
 
-def init():
+def init(directory):
     '''
     Inicia a aplicação para que crie a biblioteca de cabeçalhos
     na máquina do usuário.
     '''
-    config_read = open(".config.txt", "r")
-    if config_read.readlines()[0] == "!init":
+    config_read = open(f"{directory}/.config.txt", "r")
+    if "!init" in  config_read.readlines()[0]:
         config_write = open(".config.txt", "w")
         config_write.write("init")
         config_write.close()
