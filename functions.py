@@ -83,7 +83,7 @@ def create(arg, directory):
         return "Já existe um cabeçalho salvo com esse nome!"
     open(directory + "/headers/" + arg[1], "w")
     os.system("/usr/bin/vim " + directory + "/headers/" + arg[1])
-    return arg[1] + "criado e salvo na sua biblioteca de cabeçalhos."
+    return arg[1] + " criado e salvo na sua biblioteca de cabeçalhos."
 
 def list_ws(directory):
     '''
@@ -104,6 +104,24 @@ def edit(arg, directory):
     
     return arg[1] + " editado e salvo na sua biblioteca de cabeçalhos."
 
+def delete(args, directory):
+    deleted = list()
+    not_exist = list()
+    for files in args[1:]:
+        if files in os.listdir(directory + "/headers"):
+            os.remove(directory + "/headers/" + files)
+            deleted.append(files)
+        else:
+            not_exist.append(files)
+
+    if len(not_exist) == 0:
+        return f"{', '.join(deleted)} excluídos"
+    elif len(deleted) == 0:
+        return f"{', '.join(not_exist)} não encontrado(s)"
+        
+    return f"{', '.join(deleted)} excluídos e {', '.join(not_exist)} não encontrado(s)"
+    
+
 def init(directory):
     '''
     Inicia a aplicação para que crie a biblioteca de cabeçalhos
@@ -111,7 +129,7 @@ def init(directory):
     '''
     config_read = open(f"{directory}/.config.txt", "r")
     if "!init" in  config_read.readlines()[0]:
-        config_write = open(".config.txt", "w")
+        config_write = open(f"{directory}/.config.txt", "w")
         config_write.write("init")
         config_write.close()
         os.mkdir("headers")

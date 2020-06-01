@@ -101,10 +101,14 @@ elif status and arg[0].lower() == "c":
     print(functions.create(arg, directory))
 elif not status and arg[0].lower() == "init":
     print(functions.init(directory))
+elif status and arg[0].lower() == "init":
+    print("Seu Header já foi iniciado!")
 elif status and arg[0].lower() == "list":
     functions.list_ws(directory)
 elif status and arg[0].lower() == "e":
     print(functions.edit(arg, directory))
+elif status and arg[0].lower() == "d":
+    print(functions.delete(arg, directory))
 elif arg[0].lower() == "help":
     help("header")
 
