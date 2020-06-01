@@ -91,6 +91,10 @@ header list
 ```
 header e nome_do_arquivo.txt
 ```
+- Excluir um ou mais arquivos salvos em sua biblioteca (você pode passar vários argumentos nessa funcionalidade):
+```
+header d nome_do_arquivo.txt
+```
 - Obter ajuda:
 ```
 header help
